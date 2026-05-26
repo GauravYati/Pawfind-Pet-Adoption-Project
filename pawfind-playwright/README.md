@@ -2,7 +2,7 @@
 
 Playwright UI and API automation for the PawFind pet adoption app.
 
-The main MERN application is kept in a different repository: `pawfind-mern`. This repository contains only the Playwright test project.
+The main MERN application is kept in a different folder in the same repository: `pawfind-mern`. This repository contains only the Playwright test project.
 
 ## Test Coverage
 
