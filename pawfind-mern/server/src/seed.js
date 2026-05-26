@@ -1,0 +1,93 @@
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import Pet from "./models/Pet.js";
+
+dotenv.config();
+
+const pets = [
+  {
+    name: "Luna",
+    species: "Dog",
+    breed: "Golden Retriever Mix",
+    age: 3,
+    gender: "Female",
+    city: "Pune",
+    image: "/images/luna-dog.jpg",
+    temperament: ["Gentle", "Playful", "Good with kids"],
+    story: "Luna loves slow walks, tennis balls, and calmly leaning against people she trusts.",
+    adoptionFee: 2500,
+    vaccinated: true
+  },
+  {
+    name: "Milo",
+    species: "Cat",
+    breed: "Domestic Shorthair",
+    age: 2,
+    gender: "Male",
+    city: "Mumbai",
+    image: "/images/milo-cat.jpg",
+    temperament: ["Curious", "Cuddly", "Apartment friendly"],
+    story: "Milo watches the world from sunny windows and politely requests chin scratches.",
+    adoptionFee: 1200,
+    vaccinated: true
+  },
+  {
+    name: "Pepper",
+    species: "Rabbit",
+    breed: "Mini Lop",
+    age: 1,
+    gender: "Female",
+    city: "Bengaluru",
+    image: "/images/pepper-rabbit.jpg",
+    temperament: ["Quiet", "Smart", "Litter trained"],
+    story: "Pepper is a bright little rabbit who enjoys leafy greens and puzzle feeders.",
+    adoptionFee: 900,
+    vaccinated: false
+  },
+  {
+    name: "Rio",
+    species: "Bird",
+    breed: "Budgie",
+    age: 1,
+    gender: "Male",
+    city: "Delhi",
+    image: "/images/rio-bird.jpg",
+    temperament: ["Social", "Cheerful", "Talkative"],
+    story: "Rio brightens the room with happy chirps and is learning to step up on a hand.",
+    adoptionFee: 700,
+    vaccinated: false
+  },
+  {
+    name: "Bruno",
+    species: "Dog",
+    breed: "Indie",
+    age: 4,
+    gender: "Male",
+    city: "Chennai",
+    image: "/images/bruno-dog.jpg",
+    temperament: ["Loyal", "Calm", "Leash trained"],
+    story: "Bruno is a steady companion who prefers gentle routines and afternoon naps.",
+    adoptionFee: 1800,
+    vaccinated: true
+  },
+  {
+    name: "Olive",
+    species: "Cat",
+    breed: "Tabby",
+    age: 5,
+    gender: "Female",
+    city: "Hyderabad",
+    image: "/images/olive-cat.jpg",
+    temperament: ["Independent", "Affectionate", "Low maintenance"],
+    story: "Olive takes her time warming up, then becomes a devoted sofa companion.",
+    adoptionFee: 1000,
+    vaccinated: true
+  }
+];
+
+await mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/pawfind");
+await Pet.deleteMany({});
+await Pet.insertMany(pets);
+await mongoose.disconnect();
+
+console.log(`Seeded ${pets.length} pets`);

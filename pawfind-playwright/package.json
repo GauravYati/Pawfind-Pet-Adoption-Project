@@ -1,0 +1,14 @@
+{
+  "name": "pawfind-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright UI and API tests for the PawFind MERN app.",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "screenshots": "node scripts/capture-screenshots.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

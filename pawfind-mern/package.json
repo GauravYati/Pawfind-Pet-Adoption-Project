@@ -1,0 +1,17 @@
+{
+  "name": "pawfind-mern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PawFind MERN stack pet adoption app with animal listings, filters, and adoption inquiries.",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "install-all": "npm install && npm --prefix server install && npm --prefix client install",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

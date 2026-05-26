@@ -1,0 +1,395 @@
+:root {
+  color: #18211f;
+  background: #f3f0e9;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0)),
+    #f3f0e9;
+  padding: 28px;
+}
+
+.workspace {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: #b54f2c;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  color: #172321;
+  font-size: clamp(2.1rem, 5vw, 4.7rem);
+  line-height: 0.98;
+  max-width: 840px;
+  margin-bottom: 0;
+}
+
+.status-pill,
+.care-line {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.status-pill {
+  background: #1f6d5f;
+  border-radius: 999px;
+  color: #fffaf4;
+  flex: 0 0 auto;
+  font-weight: 800;
+  padding: 12px 16px;
+}
+
+.control-strip {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(260px, 1fr) auto;
+  margin-bottom: 18px;
+}
+
+.search-field {
+  align-items: center;
+  background: #fffdfa;
+  border: 1px solid #ded6cb;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  padding: 0 14px;
+}
+
+.search-field input {
+  background: transparent;
+  border: 0;
+  color: #18211f;
+  min-height: 52px;
+  outline: 0;
+  width: 100%;
+}
+
+.species-tabs {
+  background: #2d3330;
+  border-radius: 8px;
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+}
+
+.species-tabs button {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: #f7eee3;
+  min-height: 42px;
+  min-width: 76px;
+  padding: 0 14px;
+}
+
+.species-tabs button.active {
+  background: #f6c85f;
+  color: #1d1b16;
+  font-weight: 800;
+}
+
+.stats-row {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: #fffdfa;
+  border: 1px solid #ded6cb;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+}
+
+.stat span {
+  color: #68716e;
+}
+
+.content-grid {
+  align-items: start;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+}
+
+.pet-list {
+  display: grid;
+  gap: 16px;
+  grid-auto-rows: 344px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 280px));
+  justify-content: start;
+}
+
+.pet-card {
+  background: #fffdfa;
+  border: 1px solid #ded6cb;
+  border-radius: 8px;
+  color: inherit;
+  display: grid;
+  grid-template-rows: 218px 1fr;
+  height: 344px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  transition: box-shadow 160ms ease;
+}
+
+.pet-card:hover {
+  box-shadow: 0 8px 22px rgba(31, 44, 39, 0.12);
+}
+
+.pet-card.selected {
+  box-shadow: inset 0 0 0 2px #f6c85f;
+}
+
+.pet-card img,
+.detail-image {
+  background: #d8ddd4;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.species-badge {
+  background: #f6c85f;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  left: 12px;
+  padding: 6px 10px;
+  position: absolute;
+  top: 12px;
+}
+
+.pet-card-body {
+  align-content: start;
+  display: grid;
+  gap: 7px;
+  padding: 16px;
+}
+
+.pet-card-body strong {
+  font-size: 1.25rem;
+}
+
+.pet-card-body span,
+.pet-card-body small,
+.detail-header span {
+  color: #68716e;
+}
+
+.pet-card-body small {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.detail-panel {
+  background: #fffdfa;
+  border: 1px solid #ded6cb;
+  border-radius: 8px;
+  overflow: hidden;
+  position: sticky;
+  top: 24px;
+}
+
+.detail-image {
+  height: 280px;
+}
+
+.detail-header,
+.story,
+.trait-row,
+.care-line,
+.inquiry-form {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.detail-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.detail-header h2 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.detail-header strong {
+  background: #214944;
+  border-radius: 8px;
+  color: #fffaf4;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+
+.story {
+  color: #34413d;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
+.trait-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.trait-row span {
+  background: #eaf3e8;
+  border-radius: 999px;
+  color: #214944;
+  font-weight: 700;
+  padding: 8px 10px;
+}
+
+.care-line {
+  color: #345b56;
+  font-weight: 800;
+  margin-top: 18px;
+}
+
+.inquiry-form {
+  border-top: 1px solid #ded6cb;
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+  padding-bottom: 22px;
+  padding-top: 20px;
+}
+
+.inquiry-form h3 {
+  align-items: center;
+  display: flex;
+  font-size: 1.05rem;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  background: #f8f5ef;
+  border: 1px solid #d6cec2;
+  border-radius: 8px;
+  color: #18211f;
+  outline: 0;
+  padding: 12px;
+  width: 100%;
+}
+
+.inquiry-form button {
+  background: #b54f2c;
+  border: 0;
+  border-radius: 8px;
+  color: #fffaf4;
+  font-weight: 900;
+  min-height: 48px;
+}
+
+.form-status,
+.empty-state {
+  color: #345b56;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+@media (max-width: 980px) {
+  .control-strip,
+  .content-grid,
+  .topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    display: grid;
+  }
+
+  .species-tabs {
+    overflow-x: auto;
+  }
+
+  .detail-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .species-tabs button {
+    min-width: 70px;
+  }
+
+  .detail-header {
+    display: grid;
+  }
+}
